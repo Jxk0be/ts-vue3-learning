@@ -23,6 +23,11 @@ export const useLocalStore = defineStore("localData", {
     incrementId(): void {
       this.idTracker += 1;
     },
+    resetExpenses(): void {
+      for (let i = 0; i < this.expenses.length; ++i) {
+        this.expenses[i].id = i + 1;
+      }
+    },
   },
   // computed() will update reactively
   getters: {},

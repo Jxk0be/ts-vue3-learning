@@ -2,6 +2,7 @@
 import { onMounted } from "vue";
 import { useLocalStore } from "../stores/localDataStore";
 import EntryForm from "../components/EntryForm.vue";
+import History from "../components/History.vue";
 
 interface Expense {
   id: number;
@@ -24,8 +25,9 @@ onMounted(() => {
 
 <template>
   <div
-    class="w-full flex justify-center items-center pt-[90px] pb-[90px] px-[20px]"
+    class="w-full gap-y-[20px] flex-col flex justify-center items-center pt-[90px] pb-[90px] px-[20px]"
   >
     <EntryForm />
+    <History />
   </div>
 </template>
