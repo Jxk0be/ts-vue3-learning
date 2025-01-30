@@ -15,11 +15,13 @@ export const useLocalStore = defineStore("localData", {
   // Functions/methods
   actions: {
     pushExpense(newExpense: Expense): void {
-      this.idTracker += 1;
       this.expenses.push(newExpense);
     },
     setExpenses(allExpenses: Expense[]): void {
       this.expenses = [...allExpenses];
+    },
+    incrementId(): void {
+      this.idTracker += 1;
     },
     // setNavStatus(status) {
     //   this.isMobileMenuOpen = status;

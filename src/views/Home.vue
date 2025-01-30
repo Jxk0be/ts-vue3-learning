@@ -32,6 +32,7 @@ onMounted(() => {
   if (data) {
     const allExpenses: Expense[] = [...JSON.parse(data)];
     localStore.setExpenses(allExpenses);
+    localStore.idTracker = allExpenses[allExpenses.length - 1]?.id;
   }
 });
 
@@ -47,6 +48,7 @@ const submitEntry = (e: MouseEvent): void => {
 
   if (!categoryVal.value || !descVal.value || !amountVal.value) return;
 
+  localStore.incrementId();
   const newExpense: Expense = {
     id: localStore.idTracker,
     desc: descVal.value,
