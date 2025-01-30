@@ -3,9 +3,10 @@ import { defineStore } from "pinia";
 interface Expense {
   id: number;
   desc: string;
-  amount: number;
+  amount: number | null;
   category: string;
 }
+
 export const useLocalStore = defineStore("localData", {
   state: () => ({
     expenses: [] as Expense[],
@@ -14,14 +15,11 @@ export const useLocalStore = defineStore("localData", {
   // Functions/methods
   actions: {
     pushExpense(newExpense: Expense): void {
+      this.idTracker += 1;
       this.expenses.push(newExpense);
     },
-    incrementId(): void {
-      this.idTracker++;
-    },
-    setExpenses(allExpenses: any): void {
-      if (allExpenses.length > 1) this.expenses = [...allExpenses];
-      else this.expenses.push(allExpenses);
+    setExpenses(allExpenses: Expense[]): void {
+      this.expenses = [...allExpenses];
     },
     // setNavStatus(status) {
     //   this.isMobileMenuOpen = status;

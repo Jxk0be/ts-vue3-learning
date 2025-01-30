@@ -45,7 +45,7 @@ const closeMenu = (): void => {
   <div
     :class="`${
       menuToggle ? 'translate-y-0' : 'translate-y-[-100%]'
-    } w-full lg:hidden flex flex-col md:pt-[90px] md:gap-0 gap-y-[20px] text-2xl font-semibold md:justify-start justify-center items-center md:h-auto duration-[300ms] bg-[#302f30] ease-in-out transition-all absolute top-0 right-0 z-0 h-screen text-white`"
+    } w-full lg:hidden flex flex-col md:pt-[90px] md:gap-0 gap-y-[20px] text-2xl font-semibold md:justify-start justify-center items-center md:h-auto duration-[300ms] bg-[#302f30] ease-in-out transition-all fixed top-0 right-0 z-0 h-screen text-white`"
   >
     <RouterLink
       @click="closeMenu"
