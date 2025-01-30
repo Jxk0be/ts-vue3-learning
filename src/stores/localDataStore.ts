@@ -23,9 +23,6 @@ export const useLocalStore = defineStore("localData", {
     incrementId(): void {
       this.idTracker += 1;
     },
-    // setNavStatus(status) {
-    //   this.isMobileMenuOpen = status;
-    // },
   },
   // computed() will update reactively
   getters: {},
