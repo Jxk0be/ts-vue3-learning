@@ -26,7 +26,7 @@ const closeMenu = (): void => {
 
 <template>
   <div
-    class="flex z-1 font-semibold fixed top-0 right-0 w-full px-[20px] text-white h-[90px] bg-[#302f30] justify-between items-center"
+    class="flex z-3 font-semibold fixed top-0 right-0 w-full px-[20px] text-white h-[90px] bg-[#302f30] justify-between items-center"
   >
     <RouterLink @click="closeMenu" to="/">
       <h1 class="text-nowrap">Spending Tracker</h1>
@@ -45,7 +45,7 @@ const closeMenu = (): void => {
   <div
     :class="`${
       menuToggle ? 'translate-y-0' : 'translate-y-[-100%]'
-    } w-full lg:hidden flex flex-col md:pt-[90px] md:gap-0 gap-y-[20px] text-2xl font-semibold md:justify-start justify-center items-center md:h-auto duration-[300ms] bg-[#302f30] ease-in-out transition-all fixed top-0 right-0 z-0 h-screen text-white`"
+    } w-full lg:hidden flex flex-col z-2 md:pt-[90px] md:gap-0 gap-y-[20px] text-2xl font-semibold md:justify-start justify-center items-center md:h-auto duration-[300ms] bg-[#302f30] ease-in-out transition-all fixed top-0 right-0 h-screen text-white`"
   >
     <RouterLink
       @click="closeMenu"
@@ -53,7 +53,8 @@ const closeMenu = (): void => {
       :key="nav.id"
       class="md:border-b py-2 md:border-slate-100 px-[20px] text-center md:text-start w-full"
       :to="nav.route"
-      >{{ nav.name }}</RouterLink
+      >{{ nav.name }}</RouterLink  
     >
   </div>
 </template>
+``
